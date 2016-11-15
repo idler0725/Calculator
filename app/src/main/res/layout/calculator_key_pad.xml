@@ -2,9 +2,9 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="0,1,2,3,4,5">
+    android:stretchColumns="0,1,2,3">
     <!--　上の解説　-->
-    <!-- android:stretchColumns="0,1,~,n" : n+1列でオブジェクトを配置しますってこと -->
+    <!-- android:stretchColumns="n" : n列目のサイズを伸ばしますってこと-->
 
     <!--　Buttonの解説　-->
     <!-- android:text="文字列" : ボタンの中に表示する文字列 -->

@@ -34,7 +34,7 @@
     <!-- android:layout_below : 後に続くidのオブジェクトの下に配置しますよってこと -->
 
     <include
-        layout="@layout/equal_key"
+        layout="@layout/calculator_key_pad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/current_formula"
@@ -42,7 +42,7 @@
         />
 
     <include
-        layout="@layout/calculator_key_pad"
+        layout="@layout/equal_key"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/current_formula"
