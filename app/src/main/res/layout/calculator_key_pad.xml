@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0,1,2,3,4,5">
+    <!--　上の解説　-->
+    <!-- android:stretchColumns="0,1,~,n" : n+1列でオブジェクトを配置しますってこと -->
+
+    <!--　Buttonの解説　-->
+    <!-- android:text="文字列" : ボタンの中に表示する文字列 -->
+    <!-- android:textColor="色コード" : 表示する文字の色 -->
+    <!-- android:background" : ボタンのデザイン -->
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_CA"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CA"
+            android:textColor="#FF0000"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_C"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textColor="#FF0000"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_DEL"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEL"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_PaN"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+/-"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_sRoot"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="√"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Percentage"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="%"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Division"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="/"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Multiplication"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="*"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_7"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="7"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_8"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="8"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_9"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="9"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Subtraction"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_4"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="4"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_5"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="5"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_6"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="6"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Addition"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_1"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_2"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="2"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_3"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+
+    <TableRow
+        style="?attr/actionBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/button_0"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_00"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="00"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/button_state"
+            />
+
+        <Button
+            android:id="@+id/button_Dot"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="."
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+
+            android:background="@drawable/button_state"
+            />
+    </TableRow>
+</TableLayout>
