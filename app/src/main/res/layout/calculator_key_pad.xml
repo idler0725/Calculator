@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="CA"
             android:textColor="#FF0000"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="C"
             android:textColor="#FF0000"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:text="DEL"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:text="+/-"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
     </TableRow>
@@ -75,7 +75,7 @@
             android:layout_height="60dp"
             android:text="√"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -86,7 +86,7 @@
             android:layout_height="60dp"
             android:text="%"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -95,9 +95,9 @@
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:text="/"
+            android:text="÷"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -106,9 +106,9 @@
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:text="*"
+            android:text="×"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
     </TableRow>
@@ -126,7 +126,7 @@
             android:layout_height="60dp"
             android:text="7"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -137,7 +137,7 @@
             android:layout_height="60dp"
             android:text="8"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -148,7 +148,7 @@
             android:layout_height="60dp"
             android:text="9"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -157,9 +157,9 @@
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:text="-"
+            android:text="－"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
     </TableRow>
@@ -177,7 +177,7 @@
             android:layout_height="60dp"
             android:text="4"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -188,7 +188,7 @@
             android:layout_height="60dp"
             android:text="5"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -208,9 +208,9 @@
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:text="+"
+            android:text="＋"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
     </TableRow>
@@ -228,7 +228,7 @@
             android:layout_height="60dp"
             android:text="1"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -239,7 +239,7 @@
             android:layout_height="60dp"
             android:text="2"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -250,7 +250,7 @@
             android:layout_height="60dp"
             android:text="3"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
     </TableRow>
@@ -268,7 +268,7 @@
             android:layout_height="60dp"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -279,7 +279,7 @@
             android:layout_height="60dp"
             android:text="00"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:background="@drawable/button_state"
             />
 
@@ -290,7 +290,7 @@
             android:layout_height="60dp"
             android:text="."
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="20sp"
 
             android:background="@drawable/button_state"
             />

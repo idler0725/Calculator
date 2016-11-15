@@ -7,7 +7,7 @@
     android:paddingBottom="2dp"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="2dp"
     tools:context="com.example.idler0725.calculator.MainActivity">
     <!--                    上の解説                         -->
     <!-- android:id : ID -->
