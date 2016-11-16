@@ -5,24 +5,19 @@
 
     <!-- 塗りつぶし -->
     <solid
-        android:color="#333333"
-        />
+        android:color="#333333"/>
 
     <!-- 余白 -->
     <padding android:left="5dp"
         android:top="5dp"
         android:right="5dp"
-        android:bottom="5dp"
-        />
+        android:bottom="5dp"/>
 
     <!-- 角の丸み -->
-    <corners android:radius="0dp"
-        />
+    <corners android:radius="0dp"/>
 
     <!-- 枠 -->
     <stroke
         android:width="2dp"
-        android:color="#000000"
-        />
-
+        android:color="#000000"/>
 </shape>

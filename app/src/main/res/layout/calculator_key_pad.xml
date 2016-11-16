@@ -2,6 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="bottom"
     android:stretchColumns="0,1,2,3">
     <!--　上の解説　-->
     <!-- android:stretchColumns="n" : n列目のサイズを伸ばしますってこと-->
@@ -14,8 +15,7 @@
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_CA"
@@ -25,8 +25,7 @@
             android:text="CA"
             android:textColor="#FF0000"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_C"
@@ -36,8 +35,7 @@
             android:text="C"
             android:textColor="#FF0000"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_DEL"
@@ -47,37 +45,33 @@
             android:text="DEL"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
-            android:id="@+id/button_PaN"
+            android:id="@+id/button_PoM"
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+/-"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button_sRoot"
+            android:id="@+id/button_SqRt"
             style="?attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:text="√"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Percentage"
@@ -87,8 +81,7 @@
             android:text="%"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Division"
@@ -98,8 +91,7 @@
             android:text="÷"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Multiplication"
@@ -109,15 +101,13 @@
             android:text="×"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_7"
@@ -127,8 +117,7 @@
             android:text="7"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_8"
@@ -138,8 +127,7 @@
             android:text="8"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_9"
@@ -149,8 +137,7 @@
             android:text="9"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Subtraction"
@@ -160,15 +147,13 @@
             android:text="－"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_4"
@@ -178,8 +163,7 @@
             android:text="4"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_5"
@@ -189,8 +173,7 @@
             android:text="5"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_6"
@@ -199,9 +182,8 @@
             android:layout_height="60dp"
             android:text="6"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:background="@drawable/button_state"
-            />
+            android:textSize="20sp"
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Addition"
@@ -211,15 +193,13 @@
             android:text="＋"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_1"
@@ -229,8 +209,7 @@
             android:text="1"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_2"
@@ -240,8 +219,7 @@
             android:text="2"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_3"
@@ -251,15 +229,13 @@
             android:text="3"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 
     <TableRow
         style="?attr/actionBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_0"
@@ -269,8 +245,7 @@
             android:text="0"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_00"
@@ -280,8 +255,7 @@
             android:text="00"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
 
         <Button
             android:id="@+id/button_Dot"
@@ -291,8 +265,6 @@
             android:text="."
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-
-            android:background="@drawable/button_state"
-            />
+            android:background="@drawable/button_state"/>
     </TableRow>
 </TableLayout>
