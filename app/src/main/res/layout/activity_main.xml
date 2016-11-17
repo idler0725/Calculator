@@ -23,23 +23,22 @@
         android:id="@+id/old_formula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="end"
         android:textColor="#FFFFFF"
         android:scrollHorizontally="true"
         android:ellipsize="start"
-        android:textSize="20sp"
-        android:maxLines="1" />
+        android:textSize="15sp"
+        android:maxLines="2" />
 
     <TextView
         android:id="@+id/current_formula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/old_formula"
-        android:gravity="right"
-        android:textSize="35sp"
+        android:gravity="end"
+        android:textSize="40sp"
         android:textColor="#FFFFFF"
-        android:maxLength="12"
-        android:fontFamily="sans-serif" />
+        android:maxLength="12" />
 
     <!--                    上の解説                         -->
     <!-- android:layout_below : 後に続くidのオブジェクトの下に配置しますよってこと -->

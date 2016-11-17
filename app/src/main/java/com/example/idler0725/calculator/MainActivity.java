@@ -5,28 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import static java.lang.Math.sqrt;
 
 public class MainActivity extends AppCompatActivity {
     //変数宣言
-    TextView old_formula;             //履歴フィールド
-    TextView current_formula;        //入力フィールド
-    int recentOperation;            //演算記号格納
-    double result;                   //演算結果格納
-    boolean operationKeyPushed;    //演算記号が押されているか
-
-    //初期化
-    void initApp() {
-        recentOperation = R.id.button_Equal;
-        result = 0;
-        operationKeyPushed = true;
-        old_formula = (TextView) findViewById(R.id.old_formula);
-        current_formula = (TextView) findViewById(R.id.current_formula);
-        current_formula.setText("0");
-        findViewById(R.id.button_0).setEnabled(false);
-        findViewById(R.id.button_00).setEnabled(false);
-    }
+    TextView oldFormula;           //履歴テキスト
+    TextView currentFormula;      //入力テキスト
+    int recentOperation;          //演算記号格納
+    double result;                 //演算結果格納
+    boolean operationKeyPushed;  //演算記号が入力されているか
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,175 +44,238 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_C).setOnClickListener(onClickClear);
         findViewById(R.id.button_CA).setOnClickListener(onClickClearAll);
         findViewById(R.id.button_DEL).setOnClickListener(onClickDelete);
-        findViewById(R.id.button_SqRt).setOnClickListener(onClickSqRt);
         findViewById(R.id.button_PoM).setOnClickListener(onClickPoM);
+        findViewById(R.id.button_Percentage).setOnClickListener(onClickPercentage);
+        findViewById(R.id.button_SqRt).setOnClickListener(onClickSqRt);
     }
 
-    //「C」が押された時の処理
+    //初期化
+    void initApp() {
+        oldFormula = (TextView) findViewById(R.id.old_formula);
+        currentFormula = (TextView) findViewById(R.id.current_formula);
+        recentOperation = R.id.button_Equal;
+        operationKeyPushed = true;
+        result = 0;
+        currentFormula.setText("0");
+        oldFormula.setText("");
+    }
+
+    //入力テキスト更新
+    void updateCurrentNumber(String currentText){
+        double checkVar = Double.parseDouble(currentText);
+        if(checkVar == (long)checkVar)
+            currentFormula.setText(String.valueOf((long)checkVar));
+        else
+            currentFormula.setText(String.valueOf(checkVar));
+    }
+    void updateCurrentNumber(double currentText){
+        if(currentText == (long)currentText)
+            currentFormula.setText(String.valueOf((long)currentText));
+        else
+            currentFormula.setText(String.valueOf(currentText));
+    }
+
+    //履歴テキスト更新
+    void updateOldNumber(String oldText){
+        double checkVar = Double.parseDouble(oldText);
+        if(checkVar == (long)checkVar)
+            oldFormula.setText(String.valueOf((long)checkVar));
+        else
+            oldFormula.setText(String.valueOf(checkVar));
+    }
+
+    //「C」が入力された時の処理
     View.OnClickListener onClickClear = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //入力フィールドのみ消去
+            //演算記号が入力されている状態に
             operationKeyPushed = true;
-            current_formula.setText("0");
-            findViewById(R.id.button_0).setEnabled(false);
-            findViewById(R.id.button_00).setEnabled(false);
+            //入力テキストのみ消去
+            currentFormula.setText("0");
         }
     };
 
-    //「CA」が押された時の処理
+    //「CA」が入力された時の処理
     View.OnClickListener onClickClearAll = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //入力状態を消去
+            //情報を初期化
             recentOperation = R.id.button_Equal;
-            result = 0;
+            //演算記号が入力されている状態に
             operationKeyPushed = true;
-            old_formula.setText("");
-            current_formula.setText("0");
-            findViewById(R.id.button_0).setEnabled(false);
-            findViewById(R.id.button_00).setEnabled(false);
+            //演算結果を0に
+            result = 0;
+            //入力テキストを消去
+            currentFormula.setText("0");
+            //履歴テキストを消去
+            oldFormula.setText("");
         }
     };
 
-    //「DEL」が押された時の処理
+    //「DEL」が入力された時の処理
     View.OnClickListener onClickDelete = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            //入力テキストを取得
+            String currentText = currentFormula.getText().toString();
+            //currentTextの末尾を消去
+            if(currentText.length() >= 2){
+                currentText = currentText.substring(0, currentText.length() - 1);
+                //入力テキストを更新
+                updateCurrentNumber(currentText);
+            }
+            else
+                currentFormula.setText("0");
         }
     };
 
-    //「+/-」が押された時の処理
+    //「+/-」が入力された時の処理
     View.OnClickListener onClickPoM = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //入力フィールドの数値を取得
-            double conversion = Double.parseDouble(current_formula.getText().toString());
+            //入力テキストの数値を取得
+            double conversion = Double.parseDouble(currentFormula.getText().toString());
             //+/-変換
             conversion -= conversion * 2;
-            //入力フィールドに表示
-            if(conversion == (long)conversion) current_formula.setText(String.valueOf((long)conversion));
-            else current_formula.setText(String.valueOf(conversion));
+            //入力テキストに表示
+            updateCurrentNumber(conversion);
+            //演算記号が入力されている状態に
             operationKeyPushed = true;
         }
     };
 
-    //「√」が押された時の処理
+    //「%」が入力された時の処理
+    View.OnClickListener onClickPercentage = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //入力テキストの数値を取得
+            double value = Double.parseDouble(currentFormula.getText().toString());
+            //直前の記号が「+」か「-」の場合演算実行
+            if(recentOperation == R.id.button_Addition || recentOperation == R.id.button_Subtraction)
+                result = calculation(recentOperation, result, (result * (value / 100)));
+            //演算結果を入力テキストに表示
+            updateCurrentNumber(result);
+            //履歴テキストを消去
+            oldFormula.setText("");
+            //演算記号が入力されている状態に
+            operationKeyPushed = true;
+        }
+    };
+
+    //「√」が入力された時の処理
     View.OnClickListener onClickSqRt = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //入力フィールドの数値を取得
-            double conversion = Double.parseDouble(current_formula.getText().toString());
+            //入力テキストの数値を取得
+            double conversion = Double.parseDouble(currentFormula.getText().toString());
             //平方根を計算
             conversion = sqrt(conversion);
-            //入力フィールドに表示
-            if(conversion == (long)conversion) current_formula.setText(String.valueOf((long)conversion));
-            else current_formula.setText(String.valueOf(conversion));
+            //入力テキストに表示
+            updateCurrentNumber(conversion);
+            //演算記号が入力されている状態に
             operationKeyPushed = true;
         }
     };
 
-    //数字が押された時の処理
+    //数字が入力された時の処理
     View.OnClickListener onClickNumber = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Button button = (Button) view;      //数字を取得
+            //数字を取得
+            Button button = (Button) view;
             //直前に記号が入力されていた場合
-            if (operationKeyPushed == true) {
-                //ドットが押された場合
-                if(button.getId() == R.id.button_Dot){
-                    //0の後にドットを表示
-                    current_formula.setText("0");
-                    current_formula.append(button.getText());
+            if (operationKeyPushed) {
+                //ドットが入力された場合
+                if (button.getId() == R.id.button_Dot) {
+                    currentFormula.append(button.getText());
+                    //演算記号が入力されていない状態に
+                    operationKeyPushed = false;
                 }
-                //数字が押された場合、新しく数字を表示
-                else current_formula.setText(button.getText());
+                //数字が入力された場合、新しく数字を表示
+                else{
+                    //「0」か「00」が入力された場合
+                    if(button.getId() == R.id.button_0 || button.getId() == R.id.button_00)
+                        currentFormula.setText("0");
+                    //それ以外の数字が入力された場合
+                    else {
+                        currentFormula.setText(button.getText());
+                        //演算記号が入力されていない状態に
+                        operationKeyPushed = false;
+                    }
+                }
             }
             //直前に数字が入力されていた場合
             else {
-                //ドットが押され、0しか入力されていなかった場合、先に0を入力
-                if(button.getId() == R.id.button_Dot && current_formula.getText().toString() == "0") current_formula.setText("0");
-                //既存の数字の後に押された数字を追加
-                current_formula.append(button.getText());
-            }
-            //記号が押されていない状態に
-            operationKeyPushed = false;
-            //0しか入力されてなければ「0」「00」は入力できない
-            double check = Double.parseDouble(current_formula.getText().toString());
-            if(check == 0.0){
-                findViewById(R.id.button_0).setEnabled(false);
-                findViewById(R.id.button_00).setEnabled(false);
-            }
-            else
-            {
-                findViewById(R.id.button_0).setEnabled(true);
-                findViewById(R.id.button_00).setEnabled(true);
+                //既存の数字の後に入力された数字を追加
+                currentFormula.append(button.getText());
+                //演算記号が入力されていない状態に
+                operationKeyPushed = false;
             }
         }
     };
 
-    //記号が押された時の処理
+    //記号が入力された時の処理
     View.OnClickListener onClickOperation = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Button operationButton = (Button) view;                                         //記号を取得
-            double value = Double.parseDouble(current_formula.getText().toString());    //記号が押される前の数値を取得
-            //一個前に押された記号が「=」の場合
+            //演算記号を取得
+            Button operationButton = (Button) view;
+            //演算記号が入力される前の数値を取得
+            double value = Double.parseDouble(currentFormula.getText().toString());
+            //一個前に入力された演算記号が「=」の場合
             if (recentOperation == R.id.button_Equal) {
                 result = value;
-                //今回押されたのが「=」の場合、履歴フィールドを消去
-                if (operationButton.getId() == R.id.button_Equal) old_formula.setText("");
-                //今回押されたのが「=」以外の場合
-                else {
-                    //履歴フィールドに「入力フィールドの値 演算記号」を表示
-                    if(result == (long)result) old_formula.setText(String.valueOf((long)result) + " " + operationButton.getText());
-                    else old_formula.setText(String.valueOf(result) + " " + operationButton.getText());
-                }
+                //履歴テキストに「入力フィールドの値 演算記号」を表示
+                if(result == (long)result)
+                    oldFormula.setText(String.valueOf((long)result) + " " + operationButton.getText());
+                else
+                    oldFormula.setText(String.valueOf(result) + " " + operationButton.getText());
             }
-            //一個前に押された記号が「=」以外の場合
+            //一個前に入力された演算記号が「=」以外の場合
             else {
-                //記号が連続で押され、押された記号が「=」以外の場合
-                if(operationKeyPushed == true && operationButton.getId() != R.id.button_Equal){
-                    //履歴フィールドを更新
-                    if(result == (long)result) old_formula.setText(String.valueOf((long)result) + " " + operationButton.getText());
-                    else old_formula.setText(String.valueOf(result) + " " + operationButton.getText());
+                //演算記号が連続で入力された場合
+                if(operationKeyPushed && operationButton.getId() != R.id.button_Equal){
+                    //入力された演算記号が「=」以外の場合
+                    if(operationButton.getId() != R.id.button_Equal) {
+                        //履歴テキストに「入力フィールドの値 演算記号」を表示
+                        if (result == (long) result)
+                            oldFormula.setText(String.valueOf((long) result) + " " + operationButton.getText());
+                        else
+                            oldFormula.setText(String.valueOf(result) + " " + operationButton.getText());
+                    }
+                    //入力された演算記号が「=」の場合
+                    else{
+                        //履歴テキストを消去
+                        oldFormula.setText("");
+                        //計算実行
+                        result = calculation(recentOperation, result, value);
+                        //計算結果を入力テキストに表示
+                        updateCurrentNumber(result);
+                    }
                 }
-                //記号が連続で押されてない場合
+                //演算記号が連続で入力されてない場合
                 else {
                     //計算実行
                     result = calculation(recentOperation, result, value);
-                    //計算結果を入力フィールドに表示
-                    if(result == (long)result) current_formula.setText(String.valueOf((long)result));
-                    else current_formula.setText(String.valueOf(result));
-                    //履歴フィールドを更新
-                    if(value == (long)value) old_formula.append(String.valueOf(value) + " " + operationButton.getText());
-                    else old_formula.append(String.valueOf((long)value) + " " + operationButton.getText());
-                    //今回押されたのが「=」の場合、履歴フィールドを消去
-                    if (operationButton.getId() == R.id.button_Equal) old_formula.setText("");
+                    //計算結果を入力テキストに表示
+                    updateCurrentNumber(result);
+                    //履歴テキストを更新
+                    if(value == (long)value) oldFormula.append(String.valueOf((long)value) + " " + operationButton.getText());
+                    else oldFormula.append(String.valueOf(value) + " " + operationButton.getText());
+                    //今回入力されたのが「=」の場合、履歴テキストを消去
+                    if (operationButton.getId() == R.id.button_Equal) oldFormula.setText("");
                 }
             }
-            //押された記号を更新
+            //入力された演算記号を更新
             recentOperation = operationButton.getId();
-            //記号が押されている状態に
+            //演算記号が入力されている状態に
             operationKeyPushed = true;
-            //0しか入力されてなければ「0」「00」は入力できない
-            double check = Double.parseDouble(current_formula.getText().toString());
-            if(check == 0.0){
-                findViewById(R.id.button_0).setEnabled(false);
-                findViewById(R.id.button_00).setEnabled(false);
-            }
-            else
-            {
-                findViewById(R.id.button_0).setEnabled(true);
-                findViewById(R.id.button_00).setEnabled(true);
-            }
         }
     };
 
-    //計算メソッド
+    //演算メソッド
     double calculation(int operation, double value1, double value2) {
-        //記号によって分岐
+        //演算記号によって分岐
         switch (operation) {
             //足し算
             case R.id.button_Addition:
