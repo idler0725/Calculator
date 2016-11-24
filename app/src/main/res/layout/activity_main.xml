@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="2dp"
-    android:paddingLeft="2dp"
-    android:paddingRight="2dp"
-    android:paddingTop="2dp"
-    android:background="#000000"
-    tools:context="com.example.idler0725.calculator.MainActivity">
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:id = "@+id/activity_main"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:paddingBottom = "2dp"
+    android:paddingLeft = "2dp"
+    android:paddingRight = "2dp"
+    android:paddingTop = "2dp"
+    android:background = "#000000"
+    tools:context = "com.example.idler0725.calculator.MainActivity">
     <!--                    上の解説                         -->
     <!-- android:id : ID -->
     <!-- android:layout_width : 幅（match_parent：画面いっぱい / wrap_content：なんとなく） -->
@@ -20,47 +20,50 @@
     <!-- android:paddingTop : 下の余白 -->
 
     <TextView
-        android:id="@+id/old_formula"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:textColor="#FFFFFF"
-        android:scrollHorizontally="true"
+        android:id = "@+id/old_formula"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:gravity = "end"
+        android:textSize = "15sp"
+        android:textColor = "#FFFFFF"
         android:ellipsize="start"
-        android:textSize="15sp"
-        android:maxLines="2" />
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:maxLines="1" />
 
     <TextView
-        android:id="@+id/current_formula"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/old_formula"
-        android:gravity="end"
-        android:textSize="40sp"
-        android:textColor="#FFFFFF"
-        android:maxLength="12" />
-
+        android:id = "@+id/current_formula"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_below = "@id/old_formula"
+        android:gravity = "end"
+        android:textSize = "40sp"
+        android:textColor = "#FFFFFF"
+        android:maxLength = "12" />
     <!--                    上の解説                         -->
     <!-- android:layout_below : 後に続くidのオブジェクトの下に配置しますよってこと -->
-    <!-- android:gravity="right" : 右詰で表示 -->
-    <!-- android:textSize="35sp" : テキストサイズ変更-->
-    <include
-        layout="@layout/equal_key"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:id="@+id/include"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <!-- android:gravity="end" : 右詰で表示 -->
+    <!-- android:ellipsize = "start" : 前半を省略 -->
+    <!-- android:scrollHorizontally = "true" : スクロールなし -->
+    <!-- android:singleLine = "true" : 下のに書き換えろって出るけどこれがないと上の効果が出ない -->
+    <!-- android:maxLines="1" : 上と同じ意味 -->
+    <!-- android:textSize = "15sp" : テキストサイズ変更-->
 
     <include
-        layout="@layout/calculator_key_pad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:id="@+id/include"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        layout = "@layout/equal_key"
+        android:id = "@+id/include"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_alignParentBottom = "true"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true" />
+
+    <include
+        layout = "@layout/calculator_key_pad"
+        android:id = "@+id/include"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_alignParentBottom = "true"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true" />
 </RelativeLayout>
