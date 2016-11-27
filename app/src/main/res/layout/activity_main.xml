@@ -37,9 +37,9 @@
         android:layout_height = "wrap_content"
         android:layout_below = "@id/old_formula"
         android:gravity = "end"
-        android:textSize = "40sp"
+        android:textSize = "30sp"
         android:textColor = "#FFFFFF"
-        android:maxLength = "12" />
+        android:maxLength = "17" />
     <!--                    上の解説                         -->
     <!-- android:layout_below : 後に続くidのオブジェクトの下に配置しますよってこと -->
     <!-- android:gravity="end" : 右詰で表示 -->
