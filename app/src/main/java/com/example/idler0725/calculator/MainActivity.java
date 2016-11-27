@@ -272,10 +272,9 @@ public class MainActivity extends AppCompatActivity {
             currentText.setText("0");
         //2文字以上ある場合の削除
         else {
-            String temp = currentText.getText().toString();
-            currentText.setText(temp.substring(0, currentText.length() - 1));
+            currentText.setText(currentText.getText().toString().substring(0, currentText.length() - 1));
             if(currentText.getText().toString().charAt(currentText.length() - 1) == '.'){
-                currentText.setText(temp.substring(0, currentText.length() - 1));
+                currentText.setText(currentText.getText().toString().substring(0, currentText.length() - 1));
                 inputDot = false;
             }
         }
@@ -358,10 +357,8 @@ public class MainActivity extends AppCompatActivity {
 
     //「+/-」が入力された場合
     void onClickPoM () {
-        //入力テキストの数値を取得
-        BigDecimal value = BigDecimal.valueOf(currentDouble);
-        //+/-変換
-        value = value.subtract(value.multiply(BigDecimal.valueOf(2)));
+        //入力テキストの数値を取得 & 変換
+        BigDecimal value = BigDecimal.valueOf(currentDouble).negate();
         //入力テキストを更新
         currentText.setText(String.valueOf(value));
     }
