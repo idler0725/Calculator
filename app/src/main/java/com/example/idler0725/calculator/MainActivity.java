@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView currentFormula;      //入力テキスト
     TextView oldText;               //履歴編集用
     TextView currentText;          //入力編集用
+    String memory;                  //メモリー機能用
     int recentOperation;          //演算記号格納
     int numberLength;               //桁
     double result;                 //演算結果格納
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_PoM).setOnClickListener(onClickButton);
         findViewById(R.id.button_Percentage).setOnClickListener(onClickButton);
         findViewById(R.id.button_SqRt).setOnClickListener(onClickButton);
+        //メモリー機能
+        findViewById(R.id.button_CLEAR_MEMORY).setOnClickListener(onClickButton);
+        findViewById(R.id.button_SAVE_MEMORY).setOnClickListener(onClickButton);
+        findViewById(R.id.button_LOAD_MEMORY).setOnClickListener(onClickButton);
     }
 
     //ここから場合分け
@@ -116,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.button_PoM :          onClickPoM();           break;
                     case R.id.button_Percentage :  onClickPercentage();   break;
                     case R.id.button_SqRt :         onClickSqRt();          break;
+
+                    case R.id.button_CLEAR_MEMORY : onClickCM();          break;
+                    case R.id.button_SAVE_MEMORY :  onClickSM();          break;
+                    case R.id.button_LOAD_MEMORY :  onClickLM();          break;
                 }
                 //記号が入力されている状態に
                 operationKeyPushed = true;
@@ -353,6 +362,21 @@ public class MainActivity extends AppCompatActivity {
        recentOperation = R.id.button_Equal;
        //値を初期化
        result = 0;
+    }
+
+    //「CM」が入力された場合
+    void onClickCM () {
+        memory = "";
+    }
+
+    //「SM」が入力された場合
+    void onClickSM () {
+        memory = currentText.getText().toString();
+    }
+
+    //「LM」が入力された場合
+    void onClickLM () {
+        currentText.setText(memory);
     }
 
     //「+/-」が入力された場合

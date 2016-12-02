@@ -8,9 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:actionBarStyle">@style/actionBar</item>
     </style>
+
     <style name="actionBar" parent="Widget.AppCompat.ActionBar">
         <!-- タイトルバーの背景色 -->
         <item name="android:background">#000000</item>
+        <!-- タイトルバーの文字スタイル -->
+        <item name="android:titleTextStyle">@style/titleTextStyle</item>
+    </style>
+
+    <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <!-- タイトルバーの文字色 -->
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>

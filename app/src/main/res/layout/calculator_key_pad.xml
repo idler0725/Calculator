@@ -48,6 +48,53 @@
             android:background = "@drawable/button_state"/>
 
         <Button
+            android:id = "@+id/button_NULL"
+            style = "?attr/buttonBarButtonStyle"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = ""
+            android:textColor = "#FFFFFF"
+            android:textSize = "20sp"
+            android:background = "@drawable/button_state"/>
+
+    </TableRow>
+
+    <TableRow
+        style = "?attr/actionBarStyle"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content">
+
+        <Button
+            android:id = "@+id/button_CLEAR_MEMORY"
+            style = "?attr/buttonBarButtonStyle"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "CM"
+            android:textColor = "#FFFFFF"
+            android:textSize = "20sp"
+            android:background = "@drawable/button_state"/>
+
+        <Button
+            android:id = "@+id/button_SAVE_MEMORY"
+            style = "?attr/buttonBarButtonStyle"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "SM"
+            android:textColor = "#FFFFFF"
+            android:textSize = "20sp"
+            android:background = "@drawable/button_state"/>
+
+        <Button
+            android:id = "@+id/button_LOAD_MEMORY"
+            style = "?attr/buttonBarButtonStyle"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "LM"
+            android:textColor = "#FFFFFF"
+            android:textSize = "20sp"
+            android:background = "@drawable/button_state"/>
+
+        <Button
             android:id = "@+id/button_PoM"
             style = "?attr/buttonBarButtonStyle"
             android:layout_width = "wrap_content"
